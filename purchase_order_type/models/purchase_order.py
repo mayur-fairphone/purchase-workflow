@@ -42,6 +42,8 @@ class PurchaseOrder(models.Model):
                 order.payment_term_id = order.order_type.payment_term_id.id
             if order.order_type.incoterm_id:
                 order.incoterm_id = order.order_type.incoterm_id.id
+            if order.order_type and order.order_type.delivery_to:
+                order.picking_type_id = order.order_type.delivery_to.id
 
     @api.model
     def create(self, vals):

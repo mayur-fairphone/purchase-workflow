@@ -10,6 +10,7 @@
                 <field name="sequence_id" />
                 <field name="payment_term_id" />
                 <field name="incoterm_id" />
+                <field name="delivery_to" />
                 <field name="description" />
                 <field name="company_id" groups="base.group_multi_company" />
             </tree>
@@ -45,6 +46,7 @@
                         <group>
                             <field name="payment_term_id" />
                             <field name="incoterm_id" />
+                            <field name="delivery_to" />
                         </group>
                     </group>
                     <group>
@@ -80,6 +82,12 @@
                         name="incoterm"
                         domain="[]"
                         context="{'group_by':'incoterm_id'}"
+                    />
+                    <filter
+                        string="Delivery To"
+                        name="delivery_to"
+                        domain="[]"
+                        context="{'group_by':'delivery_to'}"
                     />
                     <filter
                         string="Company"

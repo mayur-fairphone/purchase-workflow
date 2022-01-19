@@ -43,3 +43,8 @@ class PurchaseOrderType(models.Model):
         string="Company",
         default=lambda self: self.env.company,
     )
+    delivery_to = fields.Many2one(
+        string="Deliver To",
+        comodel_name="stock.picking.type",
+        help="It will assign selected option to purchase order delivery to field",
+    )
